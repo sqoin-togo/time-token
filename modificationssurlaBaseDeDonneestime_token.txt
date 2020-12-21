@@ -1,0 +1,32 @@
+----------------------------------------------------------------------------------------
++ALTER Table user modify email varchar(255) NOT NULL UNIQUE;
++ALTER Table company modify name varchar(255) NOT NULL UNIQUE;
++ALTER Table promotion modify creation_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ;
++ALTER Table promotion modify last_update_date timestamp  DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP;
++ALTER Table promotion modify expiration_date timestamp NOT NULL DEFAULT '2038-01-19 03:14:07';
++ALTER TABLE promotion DROP COLUMN value ; 
++ALTER TABLE promotion ADD COLUMN cost int DEFAULT '0';
++ALTER TABLE promotion ADD COLUMN category varchar(255) DEFAULT NULL;
++ALTER Table promotion modify creation_date timestamp  DEFAULT CURRENT_TIMESTAMP; 
++ALTER Table promotion modify expiration_date timestamp  DEFAULT '2038-01-19 03:14:07';
++ALTER Table promotion modify description text  ;
++ALTER TABLE promotion modify name varchar(255) NOT NULL;
++ALTER TABLE promotion modify id_company int NOT NULL;
++ALTER TABLE user MODIFY age int DEFAULT NULL;
++ALTER TABLE transaction ADD COLUMN description varchar(255) DEFAULT NULL ;
++ALTER TABLE transaction ADD COLUMN id_activity int DEFAULT NULL ;
++ALTER TABLE transaction ADD COLUMN cost int DEFAULT NULL ;
++ALTER TABLE transaction ADD COLUMN type int DEFAULT NULL ;
++ALTER TABLE transaction modify COLUMN type ENUM("in","out");
++ALTER TABLE company ADD COLUMN description text DEFAULT NULL ;
++ALTER TABLE activity MODIFY verified int DEFAULT 0;
++alter table promotion modify column `verified` int DEFAULT '0';
++alter table company modify column `verified` int DEFAULT '0';
++ALTER Table transaction modify date timestamp   DEFAULT CURRENT_TIMESTAMP ;
++ALTER Table activity modify date timestamp   DEFAULT CURRENT_TIMESTAMP ;
++ALTER TABLE user ADD COLUMN token int default 0;
++ALTER TABLE company ADD COLUMN email varchar(255) DEFAULT NULL ;
++ALTER TABLE promotion ADD COLUMN discount int DEFAULT '0';
+ ALTER TABLE promotion MODIFY cost double;
+ ALTER TABLE promotion MODIFY discount double;
+--------------------------------------------------------------------------

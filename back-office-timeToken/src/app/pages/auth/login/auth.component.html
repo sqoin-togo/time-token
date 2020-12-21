@@ -1,0 +1,50 @@
+<div class="loginBody">
+    <div class="title">
+        <img src="../../../../assets/images/logo-timeToken.png">
+
+
+        <h1 id="title" i18n="@@login">TimeToken</h1>
+    </div>
+
+
+    <nb-alert outline="success" *ngIf="err==0" i18n="@@loginAlert1">Successfully authenticated!</nb-alert>
+
+    <nb-alert outline="danger" *ngIf="err==2" i18n="@@loginAlert2"> Please check your email and password</nb-alert>
+    <nb-alert outline="danger" *ngIf="err==1" i18n="@@loginAlert2"> Your account is not yet active</nb-alert>
+
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" aria-labelledby="title">
+
+
+        <div class="form-control-group">
+            <input id="email" nbInput fullWidth type="text" formControlName="email" placeholder="Email" autofocus [status]="formValid.email.dirty ? (formValid.email.invalid  ? 'danger' : 'success') : 'basic'" [attr.aria-invalid]="formValid.email.invalid && formValid.email.touched ? true : null">
+            <ng-container *ngIf="submitted && formValid.email.errors">
+                <p class="error-message" i18n="@@loginAlert3">
+                    Email is required
+                </p>
+            </ng-container>
+        </div>
+
+        <div class="form-control-group">
+            <input id="password" nbInput fullWidth formControlName="password" name="password" type="password" placeholder="Password" autofocus [status]="formValid.password.dirty ? (formValid.password.invalid  ? 'danger' : 'success') : 'basic'" [attr.aria-invalid]="formValid.password.invalid && formValid.password.touched ? true : null">
+
+            <ng-container *ngIf="submitted && formValid.password.errors ">
+                <p i18n="@@loginAlert5" class="error-message" *ngIf="formValid.password.errors.required">
+                    Password is required
+                </p>
+
+            </ng-container>
+        </div>
+        <div class="text-center p-3">
+            <button nbButton class="loginBtn" shape="round" size="small" [disabled]="submitted" [class.btn-pulse]="submitted">
+                Login
+             </button>
+        </div>
+
+        <div class="another-section">
+            <a [routerLink]="['/auth/reset']">Forgot Password</a>
+            <a (click)="register()">don't have an account yet?<span class="text-underline"> Register</span></a>
+        </div>
+    </form>
+
+</div>

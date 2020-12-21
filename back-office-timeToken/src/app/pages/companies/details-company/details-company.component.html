@@ -1,0 +1,118 @@
+<div class="container-scroller full-page-wrapper ">
+
+  <div class="row nav">
+    <div class="col-lg-8 col-md-6 col-12">
+      <h1>Company details : </h1>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-12">
+      <button class="btn  submit-btn btn-block" (click)="goManageCompanies()">Return to Manage Companies</button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-5">
+
+      <div class="row ">
+        <div class="col-lg-4 col-md-6 col-12">
+          <img class="logo" *ngIf="company.logo!==null" [src]=company.logo>
+          <img *ngIf="company.logo===null" src="../../../assets/images/eclipse.png">
+          <!-- <img class="logo" *ngIf="!company.logo" src="../../../../assets/images/eclipse.png"> -->
+        </div>
+        <div class="col-lg-8 col-md-6 col-12" *ngIf="company !== undefined">
+          <h4 class="font-weight-semibold">{{company.name}}</h4>
+          <br>
+
+          <i class="fa fa-envelope" aria-hidden="true">{{company.email}}</i>
+          <br>
+          <br>
+          <i class="fa fa-map-marker" aria-hidden="true">{{company.adress}},{{company.zip_code}},{{company.city}}</i>
+          <br>
+          <br>
+          <i class="fa fa-phone" aria-hidden="true">+{{company.country_code}} {{company.phone}}</i>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-sm-2 sep">
+      <span class="sepText">
+      </span>
+    </div>
+
+    <div class="col-sm-5">
+      <div class="user-info">
+        <p>number of total promotions : </p>
+        <p>number of available promotions : </p>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="row nav promotions">
+      <h3> Promotions </h3>
+
+
+      <table class="my-3 table table-bordered  dataTable" role="grid" aria-describedby="example2_info"
+        style="text-align: center">
+        <thead>
+          <tr role="row">
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-label="activation: activate to sort column ascending">title</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-label="password: activate to sort column ascending">description</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-label="password: activate to sort column ascending">value </th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-label="affect: activate to sort column ascending">posting date</th>
+            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
+              aria-label="affectsub: activate to sort column ascending">expiration date</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let promotion of promotions | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+
+
+
+            <td>
+              <a (click)="goDetailsPromotion(promotion.id)" style="cursor: pointer">{{promotion.name}}</a>
+            </td>
+            <td>
+              {{ promotion.description}}
+            </td>
+            <td>
+              <p *ngIf="!promotion.cost">--</p>
+              <p *ngIf="promotion.cost">{{promotion.cost}} tokens</p>
+            </td>
+            <td>
+              {{promotion.creation_date| date : 'yyyy-MM-dd'}}
+            </td>
+            <td>
+              {{promotion.expiration_date| date : 'yyyy-MM-dd'}}
+            </td>
+            <td>
+              <i class="fa fa-trash fa-1x" style="color: #d41919; cursor: pointer;"
+                (click)="delete(promotion.id)">delete</i>
+              <br>
+              <i class="fa fa-edit fa-1x" style="color: #dfd00a; cursor: pointer;"
+                (click)="update(promotion.id)">update</i>
+            </td>
+        </tbody>
+      </table>
+
+      <pagination-controls (pageChange)="pageActuel = $event" previousLabel="Previous" nextLabel="Next">
+      </pagination-controls>
+
+    </div>
+    <br>
+    <div class="row nav">
+      <div class="col-lg-12 col-md-6 col-12">
+        <h1>Private key : </h1>
+      </div>
+      <div class="col-lg-4 col-md-6 col-12" (click)="onDivClick()">
+        <button *ngIf="isButtonVisible" class="btn  click-btn btn-block" (click)="clickEvent()">Generate</button>
+      </div>
+
+    </div>
+
+
+  </div>

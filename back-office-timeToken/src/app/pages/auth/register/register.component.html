@@ -1,0 +1,61 @@
+<div id="logo" class="title">
+    <img src="../../../../assets/images/logo-timeToken.png"></div>
+
+<h1 id="title" class="title">
+    Register</h1>
+    <nb-alert outline="success" *ngIf="err==0" i18n="@@loginAlert1" >Authentifié avec succès!</nb-alert>
+    
+    <nb-alert outline="danger" *ngIf="err==1" i18n="@@loginAlert2"> Email already exist, please try with another Email</nb-alert>
+
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" aria-labelledby="title">
+
+    <div class="form-control-group">
+        <input id="firstname" nbInput formControlName="firstname" name="firstname" type="text" placeholder="First Name" [status]="f.firstname.dirty ? (f.firstname.invalid  ? 'danger' : 'success') : 'basic'" [attr.aria-invalid]="f.firstname.invalid && f.firstname.touched ? true : null">
+        <div *ngIf="hasError && f.firstname.errors &&registerForm.controls['firstname'].touched" class="error-warning">
+            <p> <i class="ion ion-alert-circled"></i> Firstname is required</p>
+        </div>
+    </div>
+
+
+    <div class="form-control-group">
+        <input id="lastname" nbInput fullWidth formControlName="lastname" name="lastname" type="text" placeholder="Last Name" [status]="f.lastname.dirty ? (f.lastname.invalid  ? 'danger' : 'success') : 'basic'" [attr.aria-invalid]="f.lastname.invalid && f.lastname.touched ? true : null">
+        <div *ngIf="hasError && f.lastname.errors && registerForm.controls['lastname'].touched" class="error-warning">
+            <p> <i class="ion ion-alert-circled"></i> Last name is required</p>
+        </div>
+    </div>
+
+    <div class="form-control-group">
+        <input id="email" nbInput fullWidth formControlName="email" name="email" type="text" placeholder="Email Address" [status]="f.email.dirty ? (f.email.invalid  ? 'danger' : 'success') : 'basic'" [attr.aria-invalid]="f.email.invalid && f.email.touched ? true : null">
+        <div *ngIf="hasError && f.email.errors && registerForm.controls['email'].touched " class="error-warning">
+            <p *ngIf="f.email.errors.required"> <i class="ion ion-alert-circled"></i> Email is required !</p>
+        </div>
+    </div>
+
+    <div class="form-control-group">
+        <input id="password" nbInput fullWidth formControlName="password" name="password" type="password" placeholder="Password">
+        <!-- <ng-container *ngIf="submitted && f.password.errors ">
+            <p i18n="@@loginAlert5" class="error-message" *ngIf="f.password.errors.required">
+              Mot de Passe est obligatoire
+            </p>
+          </ng-container>-->
+    </div>
+
+
+    <div class="form-control-group">
+        <input id="confirmPassword" nbInput fullWidth formControlName="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm Password">
+        <ng-container *ngIf="hasError('confirmPassword','confirmPassword')">
+            <p i18n="@@loginAlert5" class="error-message" *ngIf="f.confirmPassword.errors.required">
+                Password doesn't match !
+            </p>
+        </ng-container>
+
+    </div>
+
+
+    <button nbButton class="registerBtn" shape="round" size="small" [disabled]="submitted" [class.btn-pulse]="submitted">
+        Register
+       </button>
+
+
+</form>

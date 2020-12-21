@@ -1,0 +1,102 @@
+.full-page-wrapper {
+    min-height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #F0F8FF;
+    padding: 2%;
+}
+
+.card {
+    box-shadow: 1px 2px 8px 0px #f1f1f1;
+    height: 133px;
+    box-shadow: (0px 2px 3.5px rgba(0, 0, 0, 0.04));
+    background-color: #ffffff;
+}
+
+h4 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+}
+
+h5 {
+    font-size: 25px;
+    line-height: 48px;
+    color: #43425d;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    padding: 0 25%;
+    text-align: center;
+}
+
+.card-label {
+    font-size: 15px;
+    line-height: 25px;
+    color: #43425d;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+}
+
+.card-text .text-green {
+    color: #00932d;
+    font-size: 28px;
+    line-height: 40px;
+    font-family: "Roboto";
+    font-weight: 700;
+}
+
+.card-text .text-red {
+    color: #f83047;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 28px;
+}
+
+.card-text .text-orange {
+    color: #fd9c00;
+    font-size: 28px;
+    line-height: 40px;
+    font-family: "Roboto";
+    font-weight: 700;
+}
+
+.card-text span {
+    font-size: 15px;
+    line-height: 24px;
+    color: #364958;
+    font-family: 'Comfortaa';
+    font-weight: lighter;
+}
+
+.card-header {
+    background-color: #ffffff;
+    border: 0;
+}
+
+.actions .card {
+    height: 210px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 2px 3.5px rgba(0, 0, 0, 0.04));
+    background-color: #ffffff;
+    padding: 10%;
+}
+
+.actions .card .card-title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #3b6064;
+    font-family: "Roboto";
+    font-weight: 400;
+    text-align: center;
+}
+
+
+/*************************************************/
+
+@media (min-width:575px) and (max-width: 1070px) {
+    .full-page-wrapper {
+        padding: 10%;
+    }
+}

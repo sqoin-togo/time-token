@@ -1,0 +1,16 @@
+{
+    "/oauth/": {
+        "target": "https://oauthtimetoken.sagecity.io/",
+        "secure": false,
+        "changeOrigin": false,
+        "logLevel": "info",
+        "timeout": 20000
+    },
+    "/app/": {
+        "target": "https://oauthtimetoken.sagecity.io/",
+        "secure": false,
+        "changeOrigin": false,
+        "logLevel": "info",
+        "timeout": 20000
+    }
+}

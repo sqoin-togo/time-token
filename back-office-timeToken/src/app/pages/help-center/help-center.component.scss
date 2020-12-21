@@ -1,0 +1,18 @@
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+:host {
+    $auth-layout-padding: 2.5rem;
+    nb-card {
+        margin: 0;
+        height: calc(100vh - 2 * #{$auth-layout-padding});
+        width: 100%;
+        background-color: #F0F8FF;
+    }
+    nb-card-header {
+        margin-top: 2%;
+        border: none;
+    }
+    nb-card-body {
+        align-items: center;
+    }
+}

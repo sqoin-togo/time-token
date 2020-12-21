@@ -1,0 +1,65 @@
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+ :host {
+    $auth-layout-padding: 2.5rem;
+    nb-card {
+        margin: 0;
+        height: calc(100vh - 2 * #{$auth-layout-padding});
+        width: 100%;
+        background-color: #F0F8FF;
+    }
+    nb-card-body {
+        display: flex;
+    }
+    .btn-success {
+        border-radius: 6px;
+        background-color: #7b8586;
+    }
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 5%;
+}
+/****************************************/
+
+.card {
+    margin: 1rem;
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0 5px 10px 0 rgba(#000, .15);
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 5%;
+}
+
+h1 {
+    color: #3b6064;
+    font-weight: 400;
+    font-family: "Comfortaa";
+}
+
+.card-body {
+    padding: 3rem;
+}
+
+.card-title {
+    color: #43425d;
+    font-weight: 700;
+    font-family: "Comfortaa";
+    text-align: center;
+    font-size: 14px;
+}
+
+.card-img-top img {
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+.form-control-group {
+    margin: 5%;
+}

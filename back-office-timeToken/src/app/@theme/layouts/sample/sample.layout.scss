@@ -1,0 +1,146 @@
+@import '../../styles/themes';
+@import '~bootstrap/scss/mixins/breakpoints';
+@import '~@nebular/theme/styles/global/breakpoints';
+@include nb-install-component() {
+     ::ng-deep {
+        nb-layout .layout .layout-container .content .columns nb-layout-column {
+            padding: 0;
+        }
+    }
+    nb-layout-column.small {
+        flex: 0.15 !important;
+    }
+    nb-sidebar.settings-sidebar {
+        $sidebar-width: 7.5rem;
+        transition: width 0.3s ease;
+        width: $sidebar-width;
+        overflow: hidden;
+        &.collapsed {
+            width: 0;
+            /deep/ .main-container {
+                width: 0;
+                .scrollable {
+                    width: $sidebar-width;
+                    //   padding: 1.25rem;
+                    background: #00ACEE;
+                }
+            }
+        }
+        /deep/ .main-container {
+            border: 0px solid ;
+            width: $sidebar-width;
+            background: #00ACEE;
+            transition: width 1s ease;
+            overflow: hidden;
+            .scrollable {
+                width: $sidebar-width;
+            }
+            @include nb-for-theme(cosmic) {
+                background: #00ACEE;
+            }
+        }
+    }
+    nb-sidebar.menu-sidebar {
+        // margin-top: nb-theme(sidebar-header-gap);
+        @include nb-for-theme(corporate) {
+            //   margin-top: 0;
+        }
+        /deep/ .main-container {
+            background: #ffffff;
+            border: 1px;
+            // height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)} - #{nb-theme(sidebar-header-gap)}) !important;
+            // @include nb-ltr(border-top-right-radius, nb-theme(radius));
+            //  @include nb-rtl(border-top-left-radius, nb-theme(radius));
+            @include nb-for-theme(corporate) {
+                // border: 1px solid nb-theme(separator);
+                height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+            }
+        }
+        /deep/ .scrollable {
+            @include nb-for-theme(corporate) {
+                padding-top: 0;
+                .menu-item:first-child {
+                    border-top: none;
+                    background: #00ACEE;
+                }
+            }
+        }
+        /deep/ nb-sidebar-header {
+            // padding-bottom: 0.5rem;
+            text-align: center;
+        }
+        background:#00ACEE;
+        /deep/ nb-menu {
+            background-color: #ffffff;
+            color: #000000;
+            font-size: 15px;
+            &>.menu-items {
+                &>.menu-item:nth-child(n) {
+                    border-bottom:none;
+                    /* .menu-title {
+                    &::after {
+                        color: #ffffff;
+                        margin-left: 1rem;
+                        // background: nb-theme(color-danger);
+                        padding: 0 0.5rem;
+                        // border-radius: nb-theme(radius);
+                             }
+                    &>.menu-item:hover {
+                        background-color: red;} */
+                  
+                }
+                &>.menu-item:first-child {
+                    border-top: black;
+                }
+                &>.menu-item:last-child {
+                    height: 250px;
+                    background: url(../../../../assets/images/timeToken-32x32.png) center center no-repeat;
+                    &>a:active,
+                    a:hover {
+                        background-color: transparent;
+                    }
+                }
+                &>.menu-item a {
+                    border-radius: 1em;
+                    border:none;
+                }
+                &>.menu-item>.menu-items {
+                    background-color: #ffffff;
+                }
+                &>.menu-item>.menu-items>.menu-item {
+                    background-color: #ffffff;
+                    color: #000000;
+                }
+            }
+        }
+    }
+    .menu-item a &.compacted {
+        /deep/ nb-sidebar-header {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@include media-breakpoint-down(xs) {
+    .main-content {
+        padding: 0.75rem !important;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    nb-sidebar.menu-sidebar {
+        margin-top: 0;
+        /deep/ .main-container {
+            height: calc(#{nb-theme(sidebar-height)} - #{nb-theme(header-height)}) !important;
+            @include nb-ltr(border-top-right-radius, 0);
+            @include nb-rtl(border-top-left-radius, 0);
+            .scrollable {
+                padding-top: 0;
+            }
+        }
+    }
+    .main-btn {
+        display: none;
+    }
+}

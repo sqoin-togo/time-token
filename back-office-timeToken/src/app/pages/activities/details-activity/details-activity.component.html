@@ -1,0 +1,23 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+<div mat-dialog-title>
+        <h2 id="title" class="title">Activity Details</h2>
+</div>
+
+<div mat-dialog-content> 
+      <p>name of activity : </p>
+      <h5 *ngIf="activity.name">{{activity.name}}</h5>
+      <br>
+      <p>category : </p>
+      <h5 *ngIf="activity.category">{{activity.category}}</h5>
+      <br>
+      <p>value : </p>
+      <h5 *ngIf="activity.value">{{activity.value}}</h5>
+    <div class="row justify-content-md-center">
+        <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+          <img *ngIf="activity.image" class="image" src="{{'data:image/jpg;base64,'+activity.image}}" />
+        </div>
+    </div>
+</div>
+

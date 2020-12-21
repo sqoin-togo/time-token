@@ -1,0 +1,129 @@
+.full-page-wrapper {
+    min-height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #F0F8FF;
+    padding: 5%;
+}
+
+h1 {
+    font-size: 36px;
+    line-height: 60px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+
+
+h2 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+h3{
+    font-size: 22px;
+    line-height: 40px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+h4 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+}
+
+h5{
+    font-size: 20px;
+    line-height: 40px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+.click-btn {
+    
+    border-radius: 12px;
+    background-color: #3b6064;
+    padding: 12px 8px;
+    height: 52px;
+    font-family:  'Comfortaa';
+    color: #fff;
+    margin-top: 28px ;
+}
+
+.submit-btn {
+    margin-top: 28px ;
+    border-radius: 12px;
+    background-color: #3b6064;
+    padding: 12px 8px;
+    height: 52px;
+    font-family:  'Comfortaa';
+    color: #fff;
+}
+
+
+ .logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    border-radius:50px;
+}
+
+
+.sep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sepText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.sepText::before,
+.sepText::after {
+    content: '';
+    flex: 1;
+    /* matches font color */
+    background-color: #000000;
+    border: 1px solid #707070;
+}
+
+.user-info {
+    font-size: 16px;
+    line-height: 25px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+span {
+    text-decoration: underline;
+}
+
+.nav {
+    padding-bottom: 5%;
+}
+
+.promotions{
+    padding-top: 10%;
+}
+
+card-img-top{
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    display: block;
+}

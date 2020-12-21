@@ -1,0 +1,54 @@
+<nb-card>
+    <nb-card-header>
+        <h1> Manage Users </h1>
+    </nb-card-header>
+
+
+    <nb-card-body>
+        <div class="row">
+            <div class="col-6">
+                <mat-button-toggle-group appearance="legacy" #group="matButtonToggleGroup" [value]="selectedVal" (change)="onValChange(group.value)">
+
+                    <mat-button-toggle value="Active">Active</mat-button-toggle>
+                    <mat-button-toggle value="Pending">Pending</mat-button-toggle>
+
+                </mat-button-toggle-group>
+            </div>
+
+
+
+            <div class="col-6">
+                <div class="input-group full-width">
+                        <input #search type="text" class="form-control" placeholder="Type your search" (change)="getAllUsers(search.value)">
+                    
+                </div>
+            </div>
+        </div>
+        <!--<i  style="cursor: pointer;" class="fas fa-plus fa-2x" (click)="create()"> Add User</i>-->
+        <table class="userTable" id="example2" class="my-3 table  table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align: center">
+            <thead class="tableUser">
+                <tr role="row">
+                    <!-- <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="id: activate to sort column descending">ID</th>-->
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="name: activate to sort column ascending">User</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="action: activate to sort column ascending">Email Address</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="action: activate to sort column ascending">Profile</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="name: activate to sort column ascending">actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+                    <td> {{user.firstname}} {{user.lastname}}</td>
+                    <td>{{user.email}}</td>
+                    <td>
+                        <i (click)="viewProfile(user.id)" class="fas fa-sign-in-alt"></i>
+                    </td>
+                    <td>
+                        <i style="color:#f30909" (click)="deleteUser(user)" class="fas fa-window-close" aria-hidden="true"></i>
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageActuel = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+    </nb-card-body>
+</nb-card>

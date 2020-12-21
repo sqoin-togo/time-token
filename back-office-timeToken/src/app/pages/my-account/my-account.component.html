@@ -1,0 +1,94 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <nb-card>
+            <nb-card-header>
+                <h1>My Account</h1>
+            </nb-card-header>
+            <nb-card-body>
+                <div class="container align-items-center">
+                    <img src="assets/images/jack.png" />
+                    <h4> {{user.firstname}} {{user.lastname}} </h4>
+
+                    <div class=" item row ">
+
+                        <div class="col-lg-10 col-md-8 col-sm-12">
+
+                            <label class="label">Email</label>
+
+
+
+                            <input nbInput id="email" disabled class="label" value="{{user.email}}">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+
+                            <input id=emailButton nbButton status="success" shape="rectangle" type="submit" (click)="editEmail()" [(ngModel)]="emailButton" class="edit" />
+
+                        </div>
+                    </div>
+                    <div class="item row">
+
+                        <div class="col-lg-10 col-md-8 col-sm-12">
+                            <label class="label">Password</label>
+
+
+                            <input id="password" nbInput type="password" disabled class="label" value="******">
+                        </div>
+
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+
+                            <input id=passwordButton nbButton status="success" shape="rectangle" type="submit" (click)="editPassword()" [(ngModel)]="passwordButton" class="edit" />
+                        </div>
+
+                    </div>
+
+                    <div class="item row">
+                        <div class="col-lg-10 col-md-8 col-sm-12">
+                            <label class="label">Payment Details:</label>
+
+
+                            <input nbInput id="paymentDetails" disabled class="label" value="{{payment_details}}">
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <input id=paymentButton nbButton status="success" shape="rectangle" class="edit" type="submit" (click)="editPaymentDetails()" [(ngModel)]="paymentButton" />
+
+                        </div>
+                    </div>
+                    <div class="item row">
+                        <div class="col-lg-10 col-md-8 col-sm-12">
+                            <label class="label">Time Format</label>
+
+
+
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12 slide">
+                            12
+                            <mat-slide-toggle></mat-slide-toggle> 24
+                        </div>
+                    </div>
+                    <div class="item row">
+                        <div class="col-lg-10 col-md-8 col-sm-12">
+                            <label class="label">Date Format</label>
+
+
+
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-12">
+                            <mat-form-field class="example-full-width">
+                                <mat-label>M/D/Y</mat-label>
+                                <input matInput [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker">
+                                    <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                                </mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+
+            </nb-card-body>
+        </nb-card>
+    </div>
+</div>

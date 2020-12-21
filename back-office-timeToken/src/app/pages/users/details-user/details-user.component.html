@@ -1,0 +1,118 @@
+<div class="container-scroller full-page-wrapper ">
+
+     <div class="row nav">
+      <div class="col-lg-8 col-md-6 col-12">
+        <h1>User Profile : </h1>
+      </div>
+  
+      <div class="col-lg-4 col-md-6 col-12">
+          <button class="btn  submit-btn btn-block" (click)="goManageUsers()">Return to Manage users</button>
+      </div>
+    </div>
+
+   <div class="col-sm-4 col-12">
+                      <img class="photo" *ngIf="user.photo" src={{user.photo}}>
+                      <img class="photo" *ngIf="!user.photo" src="../../../../assets/images/silhouette.png">
+    </div>
+
+     <div class="row">
+      <div class="col-sm-5">
+          <div class="row">
+                  <div class="col-sm-8 col-12" *ngIf="user !== undefined">
+                      <h4 class="font-weight-semibold">{{user.firstname}} {{user.lastname}}</h4>
+                      <i class="fa fa-envelope" aria-hidden="true">email : </i>
+                      <h6>{{user.email}}</h6>
+                      <i  class="fa fa-map-marker" aria-hidden="true">location :</i>
+                      <h6 >{{user.city}}</h6>
+                      <i  class="fa fa-phone" aria-hidden="true">phone : </i>
+                      <h6 >{{user.telephone}}</h6>  
+                  </div>
+          </div>
+      </div> 
+    
+  
+    <div class="col-sm-2 sep">
+      <span class="sepText">                  
+      </span>
+    </div>
+  
+    <div class="col-sm-5">
+      <div class="user-info">
+        <p>number of total activities:  {{information.numberOfClaims}}</p>
+        <p>number of total amount earned : {{information.AllTimeEarned}} </p>    
+      </div>
+    </div>
+   
+    <div class="row nav in-transactions">
+      <h3> activities added : </h3>
+    <table  class="my-3 table table-bordered  dataTable" role="grid" aria-describedby="example2_info" style="text-align: center">
+      <thead>
+      <tr role="row">
+        <th  class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="activation: activate to sort column ascending">Date</th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="password: activate to sort column ascending">activity ID</th>
+        <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="password: activate to sort column ascending">value  </th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let inTransaction of inTransactions | paginate: { itemsPerPage: 7, currentPage: pageActuel }" >
+          <td>
+            {{inTransaction.date | date : 'yyyy-MM-dd'}}
+          </td>
+          <td>
+            {{inTransaction.id_activity}}
+          </td>
+          <td>
+            <p *ngIf="!inTransaction.cost" >--</p>
+            <p *ngIf="inTransaction.cost">{{inTransaction.cost}} tokens</p>
+          </td>
+      </tbody>
+      </table>
+      <pagination-controls
+      (pageChange)="pageActuel = $event"
+      previousLabel="Previous"
+      nextLabel="Next">
+      </pagination-controls>
+    </div>
+
+    <div class="row nav out-transactions">
+        <h3> promotions redeemed : </h3>
+      <table  class="my-3 table table-bordered  dataTable" role="grid" aria-describedby="example2_info" style="text-align: center">
+        <thead>
+        <tr role="row">
+          <th  class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="activation: activate to sort column ascending">Date</th>
+          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="password: activate to sort column ascending">promotion ID</th>
+          <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="password: activate to sort column ascending">cost  </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let outTransaction of outTransactions| paginate: { itemsPerPage: 7, currentPage: pageActuel }" >
+            <td>
+              {{outTransaction.date | date : 'yyyy-MM-dd'}}
+            </td>
+            <td>
+              {{outTransaction.id_activity}}
+            </td>
+            <td>
+              <p *ngIf="!outTransaction.cost" >--</p>
+              <p *ngIf="outTransaction.cost">{{outTransaction.cost}} tokens</p>
+            </td>
+        </tbody>
+        </table>
+        <pagination-controls
+        (pageChange)="pageActuel = $event"
+        previousLabel="Previous"
+        nextLabel="Next">
+        </pagination-controls>
+      </div>
+  
+    
+  
+  
+  </div>
+  
+  
+  
+      
+       
+  
+      
+  
+  

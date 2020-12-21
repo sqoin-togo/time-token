@@ -1,0 +1,134 @@
+
+.full-page-wrapper {
+    min-height: 100vh;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #F0F8FF;
+    padding: 10%;
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+i{ 
+    font: Arial;
+    color:black;
+}
+
+.submit-btn {
+    border-radius: 12px;
+    background-color: #3b6064;
+    padding: 12px 8px;
+    height: 52px;
+    font-family:  'Comfortaa';
+    color: #fff;
+}
+
+.avatar {
+    width: 105px;
+    height: 97px;
+    border-radius: 10px;
+}
+
+.sep {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.sepText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.sepText::before,
+.sepText::after {
+    content: '';
+    flex: 1;
+    /* matches font color */
+    background-color: #000000;
+    border: 1px solid #707070;
+}
+
+.user-info {
+    font-size: 16px;
+    line-height: 25px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 700;
+}
+
+.table.table-striped thead {
+    border-radius: 10px;
+    background-color: #b7c6c9;
+    font-size: 14px;
+    line-height: 22px;
+    color: #ffffff;
+    font-family: "Comfortaa";
+    font-weight: 700;
+}
+
+.table.table-striped tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.05);
+    height: 54px;
+}
+
+.table.table-striped tbody tr:nth-child(odd) {
+    background: transparent;
+    height: 54px;
+}
+
+.table.table-striped tbody .td-class {
+    border-left: 1px solid #707070;
+    font-size: 18px;
+    line-height: 22px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+}
+
+.pt-1,
+.py-1 {
+    padding-top: 0.25rem !important;
+    font-size: 18px;
+    line-height: 22px;
+    color: #43425d;
+    font-family:  'Comfortaa';
+    font-weight: 400;
+}
+
+span {
+    text-decoration: underline;
+}
+
+.nav {
+    padding-bottom: 5%;
+}
+
+.card {
+    text-align: center;
+}
+
+.photo {
+    padding-bottom:5%;
+    object-fit: contain;
+}
+
+.in-transactions , .out-transactions {
+    padding-top: 10%;
+  }

@@ -1,0 +1,48 @@
+<nb-card>
+    <nb-card-header>
+        <h1> Manage Admins </h1>
+    </nb-card-header>
+
+
+    <nb-card-body>
+
+        <div class="row">
+            <div class="ml-auto col-6 ">
+                <div class="input-group full-width">
+
+
+                    <input #search type="text" class="form-control" placeholder="Type of search" (change)="searchAdmins(search.value)">
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--<i  style="cursor: pointer;" class="fas fa-plus fa-2x" (click)="create()"> Add User</i>-->
+        <table class="userTable" id="example2" class="my-3 table table-hover dataTable" role="grid" aria-describedby="example2_info" style="text-align: center">
+            <thead class="tableUser">
+                <tr role="row">
+                    <!-- <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="id: activate to sort column descending">ID</th>-->
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="name: activate to sort column ascending">name</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="action: activate to sort column ascending">Email Address</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="name: activate to sort column ascending">role</th>
+                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="action: activate to sort column ascending">Enable admin</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let admin of admins | paginate: { itemsPerPage: 7, currentPage: pageActuel }">
+                    <td> {{admin.firstname}} {{admin.lastname}}</td>
+                    <td>{{admin.email}}</td>
+                    <td>{{admin.role}}</td>
+                    <td>
+                        <i style="color:#55828b" *ngIf="admin.enabled ===1 " class="fa fa-check" aria-hidden="true"></i>
+                        <i style="color:#55828b" *ngIf="admin.enabled ===0 " (click)="enableUser(admin.email,admin.id)" class="fas fa-toggle-off fa-lg"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageActuel = $event" previousLabel="Previous" nextLabel="Next"></pagination-controls>
+
+    </nb-card-body>
+</nb-card>

@@ -1,0 +1,66 @@
+#email,
+#password,
+#lastname,
+#firstname,
+#confirmPassword {
+    width: 70%;
+    height: 52px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.error-message {
+    text-align: center;
+    color: red;
+    padding-top: 2%;
+}
+
+.error-warning {
+    text-align: center;
+    color: red;
+    padding-top: 2%;
+}
+
+.title {
+    font-family: "Comfortaa";
+    color: #3b6064;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+::placeholder {
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #78849e;
+    font-family: "Roboto";
+    font-weight: 700;
+}
+
+.sub-title {
+    text-align: center;
+    color: #364958;
+    font-family: "Comfortaa";
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.registerBtn {
+    background-color: #87bba2;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    width: 167px;
+    height: 36px;
+    border-radius: 18.5px;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Comfortaa";
+    font-weight: 400;
+    text-align: center;
+}
+
+.registerBtn:hover {
+    background-color: #00d68f;
+    color: white;
+}

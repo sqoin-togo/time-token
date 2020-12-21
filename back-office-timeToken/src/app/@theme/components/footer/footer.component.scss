@@ -1,0 +1,18 @@
+@import '../../styles/themes';
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+@include nb-install-component() {
+    //  width: 100%;
+    display: flex;
+    text-align: center;
+    span {
+        color: #43425d;
+        font-weight: bold;
+        font-family: 'Comfortaa', cursive;
+    }
+    /* @include media-breakpoint-down(is) {
+        .socials {
+            font-size: 1.5rem;
+        }
+    }*/
+}

@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+/*---------------------------------------------*/
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.loginBtn {
+    background-color: #87bba2;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    width: 167px;
+    height: 36px;
+    border-radius: 18.5px;
+    font-size: 14px;
+    color: #ffffff;
+    font-family: "Comfortaa";
+    font-weight: 400;
+    text-align: center;
+}
+
+.loginBtn:hover {
+    background-color: #00d68f;
+    color: white;
+}
+
+a {
+    color: rgb(59, 96, 100);
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+    font-family: Poppins-Light, Poppins;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #07a4ffc7;
+}
+
+#email,
+#password {
+    width: 70%;
+    height: 52px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+#title {
+    padding: 2%;
+    color: #364958;
+}
+
+.title {
+    font-size: 24px;
+    letter-spacing: 1px;
+    font-family: "Comfortaa";
+    font-weight: 400;
+    text-align: center;
+    padding: 5%;
+}
+
+::placeholder {
+    font-size: 15px;
+    letter-spacing: 0px;
+    color: #78849e;
+    font-family: "Roboto";
+    font-weight: 700;
+}
+
+.error-message {
+    text-align: center;
+    color: red;
+    padding-top: 2%;
+}
+
+.text-underline {
+    text-decoration: underline;
+    cursor: pointer;
+}

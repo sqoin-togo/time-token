@@ -1,0 +1,61 @@
+<nb-layout>
+    <nb-layout-column>
+        <nb-card>
+
+            <nb-card-body>
+                <div class="container-scroller full-page-wrapper ">
+
+                    <div class="titre ">
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="text-right">
+                                    <img src="../../assets/images/shield-alt.png">
+                                </div>
+                            </div>
+                            <div class="col-7">
+
+                                <p>We care about your privacy.</p>
+                                <p> Your data is safe and secure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container page-body-wrapper p-3">
+                        <div class="content-wrapper d-flex ">
+                            <div class="row w-100 pt-3 ">
+                                <div class="col-lg-10 mx-auto">
+                                    <div class="contenu">
+                                        <p class="text-item">Before we get started, TimeToken needs your consent to securely store your data for you. This app is made by Santira Ltd. </p>
+                                        <p class="text-item">Your data is encrypted on our secure servers and cannot be read by anyone but yourself. You have full control over your data and can export or delete it within the app at any time. </p>
+                                        <p class="text-item"> Your can learn more about how we process data in our <span class="text-underline">privacy policy</span></p>
+                                        <div class="row">
+
+                                            <div class="check-container">
+                                                <input [(ngModel)]="protection" type="checkbox" id="one">
+                                                <label for="one"></label>
+                                                <div class="tag">I understand my data protection rights and consent to my data being stored</div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="check-container">
+                                                <input [(ngModel)]="conditions" type="checkbox" id="three">
+                                                <label for="three"></label>
+                                                <span class="tag">I am 16 or older and agree to the<span class="text-underline"> terms and conditions</span> </span>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            <button (click)="cancel()" class="btn submit-btn btn-lg disabled">Cancel</button>
+                                            <button (click)="confirm()" class="btn submit-btn btn-lg">Confirm</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </nb-card-body>
+        </nb-card>
+    </nb-layout-column>
+</nb-layout>

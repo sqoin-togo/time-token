@@ -1,0 +1,126 @@
+h1 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 700;
+    text-align: center;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+h4 {
+    font-size: 28px;
+    line-height: 40px;
+    color: #43425d;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    text-align: center;
+}
+
+.container {
+    background-color: white;
+    padding: 3%;
+    border-radius: 10px;
+    width: 80%
+}
+
+.item {
+    margin-top: 1%;
+    display: flex;
+}
+
+.slide {
+    font-size: 10px;
+    line-height: 20px;
+    color: #43425d;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+:host /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+    border-radius: 9px;
+    background-color: #55828b;
+}
+
+:host /deep/ .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    border-radius: 9px;
+    box-shadow: 0 0 9px rgba(0, 0, 0, 0.02);
+    background-color: #ffffff;
+    border: 1px solid #55828b;
+}
+
+.label {
+    font-size: 15px;
+    line-height: 40px;
+    color: #43425d;
+    font-family: 'Comfortaa';
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.input-md {
+    width: 60%;
+    border: none;
+}
+
+.example-full-width {
+    font-size: 12px;
+    line-height: 16px;
+    color: #43425d;
+    font-weight: 700;
+    font-family: "Roboto";
+    text-align: center;
+    width: 100%;
+}
+
+#emailButton,
+#passwordButton,
+#paymentButton {
+    border-radius: 4px;
+    background-color: #00ACEE;
+    font-size: 10px;
+    line-height: 20px;
+    color: #ffffff;
+    font-family: "Comfortaa";
+    font-weight: 700;
+    text-align: center;
+    width: -moz-available;
+}
+
+
+/****************************************************************************************************************/
+
+@import '~@nebular/theme/styles/global/breakpoints';
+@import '~bootstrap/scss/mixins/breakpoints';
+:host {
+    $auth-layout-padding: 2.5rem;
+    nb-card {
+        margin: 0;
+        height: calc(100vh - 2 * #{$auth-layout-padding});
+        width: 100%;
+        background-color: #F0F8FF;
+    }
+    nb-card-body {
+        // display: flex;
+        width: auto;
+    }
+    nb-card-header {
+        border: none;
+    }
+    nb-card-body {
+        align-items: center;
+    }
+}
+
+
+/************************************************************************************/

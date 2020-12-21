@@ -1,0 +1,29 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+  </button>
+  <div mat-dialog-title>
+          <h2 id="title" class="title">Promotion Details</h2>
+  </div>
+  <div mat-dialog-content> 
+        <p>name of promotion : </p>
+        <h5 *ngIf="promotion.promotion_name">{{promotion.promotion_name}}</h5>
+        <p>category : </p>
+        <h5 *ngIf="promotion.promotion_category">{{promotion.promotion_category}}</h5>
+        <p>cost : </p>
+        <h5 *ngIf="promotion.cost">{{promotion.cost}}</h5>
+        <p>description : </p>
+        <h5 *ngIf="promotion.promotion_description">{{promotion.promotion_description}}</h5>
+        <p>company : </p>
+        <h5 *ngIf="promotion.company_name">{{promotion.company_name}} --- {{promotion.company_category}}</h5> 
+        <p>creation date : </p>
+        <h5 *ngIf="promotion.creation_date">{{promotion.creation_date|date : 'yyyy-MM-dd'}}</h5>
+       <p>code : </p> 
+       <h5 *ngIf="promotion.code">{{promotion.code}}</h5>      
+        <div class="row justify-content-md-center">
+        <hr>
+        <br>
+        <img *ngIf="promotion.image" class="image" src="{{'data:image/jpg;base64,'+promotion.image}}" />
+     
+  </div>
+  
+  
